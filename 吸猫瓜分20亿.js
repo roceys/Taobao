@@ -1,8 +1,11 @@
 /**
  * 作者：ROCEYS
  * 时间：2020-10-21 01:01:53
- * Version：0.0.2
+ * Version：0.0.3
  * 增加去搜索功能
+ * 增加自动撸猫功能（偶尔出现1600暴击）
+ * 增加自动领奖励功能
+ * 1021晚上发现淘宝增加了脚本检测 可能喵币只有1/10奖励了
  */
 
 var i = 0;
@@ -65,24 +68,37 @@ if (!textContains("累计任务奖励").exists()) {
     log("进入活动成功");
 }
 sleep(1500 * speed);
-if (className("android.widget.Button").text("签到").exists()) {
-    className("android.widget.Button").text("签到").click()
-    sleep(200);
-    log("签到成功");
-} else { log("已签到"); }
+if (!textContains("签到").exists()) { log("已签到"); }
 sleep(1500 * speed);
 
+var k=0;
 taskList.forEach(task => {
     while (textContains(task).exists()) {
+        if(k>1){
+            log("邀请任务需手动完成！");
+            break;
+        }
         log("开始做第" + (i+1) + "次任务！");
         var a = text(task).findOnce(j);
         switch (task) {
             case '去完成':
                 log("开始去完成任务...")
-                if (textContains("邀请").exists()) {
+                var ls = text(task).find();
+                var flag = a.parent().children().forEach(function (child) {
+                    if(child.text().indexOf("邀请")!=-1){return false;}
+                });
+                if (!flag && ls.size() > 1) {
                     click('去完成',1);
+                }else if(!flag && ls.size() == 1 ){
+                    k++;
+                    break;
                 }else{
                     click('去完成',0);
+                }
+
+                if (textContains("签到").exists()) {
+                    log("签到完成！");
+                    continue;
                 }
 
 				sleep(1500 * speed);
@@ -125,6 +141,39 @@ taskList.forEach(task => {
         sleep(2000 * speed);
     }
 });
+
+var catCoins = text("已领取").find();
+if(catCoins != null && catCoins.size() < 4){
+    sleep(1500 * speed);
+    click('领取奖励');
+    sleep(1500 * speed);
+    click('领取奖励');
+    sleep(1500 * speed);
+    click('领取奖励');
+}
+log("奖励已领取完成!");
+
+sleep(3000 * speed);
+var close = text("关闭").findOnce();
+if(null != close){
+    close.click();
+    log("开始撸猫");
+    var num = dialogs.input("输入撸猫次数", 300);
+    if(num==null){
+        num = 300;
+    }
+    var i=1;
+    while (true) {
+        click(width/2,height/2);
+        log(i+"喵喵喵~");
+        if(i==num){
+            break;
+        }
+        i++;
+    }
+}else{
+    log("请关闭任务界面并手动运行撸猫脚本");
+}
 
 log("Done!");
 exit();
