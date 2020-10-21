@@ -1,11 +1,13 @@
 /**
- * 作者:ROCEYS
+ * 作者：ROCEYS
  * 时间：2020-10-21 01:01:53
+ * Version：0.0.2
+ * 增加去搜索功能
  */
 
 var i = 0;
 var j = 0;
-var taskList = ['去浏览', '去完成'];
+var taskList = ['去浏览','去搜索', '去完成'];
 var height = device.height;
 var width = device.width;
 setScreenMetrics(width, height);
@@ -71,8 +73,13 @@ taskList.forEach(task => {
         var a = text(task).findOnce(j);
         switch (task) {
             case '去完成':
-				log("开始去完成任务")
-				click('去完成',1);
+                log("开始去完成任务...")
+                if (textContains("邀请").exists()) {
+                    click('去完成',1);
+                }else{
+                    click('去完成',0);
+                }
+
 				sleep(1500 * speed);
 				if (textContains("当前淘宝账号").exists()) {
 					log("暂不支持跳转其它APP！");
@@ -82,11 +89,12 @@ taskList.forEach(task => {
                 swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
                 sleep(15000 * speed);
 				swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
-				textContains("任务完成").findOne(10000 * speed);
+				textContains("完成").findOne(10000 * speed);
 				i++;
 				log("已完成第" + i + "次任务！");
 				back();
-				break;
+                break;
+            case '去搜索':
             case '去浏览':
                 sleep(500 * speed);
                 a.click();
@@ -100,7 +108,7 @@ taskList.forEach(task => {
 				}else{
 					sleep(15000 * speed);
 				}
-                textContains("任务完成").findOne(10000 * speed);
+                textContains("完成").findOne(10000 * speed);
                 i++;
                 log("已完成第" + i + "次任务！")
                 back();
