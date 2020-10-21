@@ -143,7 +143,7 @@ taskList.forEach(task => {
 });
 
 var catCoins = text("已领取").find();
-if(catCoins != null && catCoins.size() < 4){
+if(catCoins == null || (catCoins != null && catCoins.size() < 4)){
     sleep(1500 * speed);
     click('领取奖励');
     sleep(1500 * speed);
