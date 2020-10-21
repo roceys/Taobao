@@ -41,7 +41,12 @@ menu: while (true) {
 }
 
 console.show();
-auto.waitFor();
+try {
+    auto.waitFor();
+}
+catch(e) {
+    dialogs.alert("当前auto.js版本为4.0以下版本，无法检测是否开启无障碍模式，请确保无障碍模式已经打开");
+}
 
 sleep(1000 * speed);
 
