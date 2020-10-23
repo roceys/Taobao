@@ -1,7 +1,7 @@
 /**
  * 作者：ROCEYS
  * 时间：2020-10-21 01:01:53
- * Version：0.0.3
+ * Version：0.0.4
  * 增加去搜索功能
  * 增加自动撸猫功能（偶尔出现1600暴击）
  * 增加自动领奖励功能
@@ -10,7 +10,7 @@
 
 var i = 0;
 var j = 0;
-var taskList = ['去浏览','去搜索', '去完成'];
+var taskList = ['去浏览','去搜索','去观看','去看看', '去完成'];
 var height = device.height;
 var width = device.width;
 setScreenMetrics(width, height);
@@ -48,33 +48,39 @@ menu: while (true) {
 console.show();
 try {
     auto.waitFor();
-}
-catch(e) {
+}catch(e) {
     dialogs.alert("当前auto.js版本为4.0以下版本，无法检测是否开启无障碍模式，请确保无障碍模式已经打开");
 }
-
 sleep(1000 * speed);
-
 log("正在打开淘宝");
 launch("com.taobao.taobao");
-sleep(1000 * speed);
-log("正在等待进入吸猫活动页面");
-log("请手动进入活动页面")
+log("等待5秒...如有多开请尽快手动选择进入");
+sleep(5000 * speed);
+
+var act = descContains("主互动");
+if(act != null){
+    log("正在自动进入活动页面");
+    act.click();
+    sleep(3000 * speed);
+}else{
+    log("正在等待进入吸猫活动页面");
+    log("请手动进入活动页面");
+}
 
 className("android.widget.Button").text("赚喵币").waitFor()
 sleep(1000);
 if (!textContains("累计任务奖励").exists()) {
-    className("android.widget.Button").text("赚喵币").findOne().click()
+    className("android.widget.Button").text("赚喵币").findOne().click();
     log("进入活动成功");
 }
 sleep(1500 * speed);
 if (!textContains("签到").exists()) { log("已签到"); }
 sleep(1500 * speed);
 
-var k=0;
+var k = 0;
 taskList.forEach(task => {
     while (textContains(task).exists()) {
-        if(k>1){
+        if(k > 1){
             log("邀请任务需手动完成！");
             break;
         }
@@ -108,9 +114,9 @@ taskList.forEach(task => {
 					continue;
 				}
                 swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
-                sleep(15000 * speed);
+                sleep(20000 * speed);
 				swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
-				textContains("完成").findOne(10000 * speed);
+				textContains("完成").findOne(1500 * speed);
 				i++;
 				log("已完成第" + i + "次任务！");
 				back();
@@ -120,16 +126,26 @@ taskList.forEach(task => {
                 sleep(500 * speed);
                 a.click();
                 sleep(1500 * speed);
-				if (!textContains("跟主播聊").exists() || !textContains("赚金币").exists()) {
-					swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
+				if (id("taolive_follow_text").exists() || textContains("赚金币").exists()) {
+                    sleep(15000 * speed);
+				}else{
+                    swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
 					sleep(3500 * speed);
 					swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
 					sleep(12000 * speed);
 					swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
-				}else{
-					sleep(15000 * speed);
 				}
-                textContains("完成").findOne(10000 * speed);
+                textContains("完成").findOne(1500 * speed);
+                i++;
+                log("已完成第" + i + "次任务！")
+                back();
+                break;
+            case '去观看':
+            case '去看看':
+                sleep(1000 * speed);
+                a.click();
+                sleep(25000 * speed);
+                descContains("完成").findOne(1500 * speed);
                 i++;
                 log("已完成第" + i + "次任务！")
                 back();
@@ -171,6 +187,11 @@ if(null != close){
         }
         i++;
     }
+
+    if(!textContains("明天7点可领").exists()){
+        id("_3vkSFX").click();
+        log("领取每日喵币完成!");
+    } 
 }else{
     log("请关闭任务界面并手动运行撸猫脚本");
 }
