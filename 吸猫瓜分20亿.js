@@ -132,7 +132,7 @@ taskList.forEach(task => {
                     swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
 					sleep(3500 * speed);
 					swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
-					sleep(12000 * speed);
+					sleep(20000 * speed);
 					swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
 				}
                 textContains("完成").findOne(1500 * speed);
