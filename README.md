@@ -3,8 +3,9 @@
 
 请勿使用未知的app，基本上都有引流/广告/木马等植入，严重可造成用户隐私数据泄露。
 
-[Autojs APP 下载](https://github.com/github-h/Auto.js/releases/tag/V4.1.1.Alpha2)
+- [Autojs APP 下载](https://github.com/github-h/Auto.js/releases/tag/V4.1.1.Alpha2)
 
+- 下载 **tmall1111-2020.js** 文件，通过Autojs APP导入脚本即可使用
 
 # 更新说明
 
