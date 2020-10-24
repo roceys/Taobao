@@ -1,7 +1,16 @@
 # Taobao
 2020淘宝双11自动领喵币吸猫脚本
+请勿使用未知的app，基本上都有引流/广告/木马等植入，严重可造成用户隐私数据泄露。
+[Autojs APP 下载](https://github.com/github-h/Auto.js/releases/tag/V4.1.1.Alpha2)
+
 
 # 更新说明
+
+## 20201024
+    新增“逛一逛”
+    新增9.5.7“签到”
+    20201023 BUG Fixed
+    Autojs加密混淆防淘宝客/羊毛党群体引流
 
 ## 20201023
 天猫双十一淘宝Auto.js脚本检测方法公布 [视频测试过程](https://www.bilibili.com/video/BV1nr4y1w7TP)
