@@ -1,14 +1,21 @@
 # Taobao
-2020淘宝双11自动领喵币吸猫脚本
+2020天猫淘宝双11自动领喵币吸猫脚本（过无障碍防检测）无后门无推广原生Auto.js纯净版
 
 请勿使用未知的app，基本上都有引流/广告/木马等植入，严重可造成用户隐私数据泄露。
 
-## 食用方法
+## <span style='color:red;'><b>食用方法</b></span>
 - [Autojs APP 下载](https://github.com/github-h/Auto.js/releases/tag/V4.1.1.Alpha2)
 
 - 下载 **tmall1111-2020.js** 文件，通过Autojs APP导入脚本即可使用
 
 - PP助手下载安装手淘 9.5.7
+
+<br>
+
+***
+---
+
+<br>
 
 # 更新说明
 
