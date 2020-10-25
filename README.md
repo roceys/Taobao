@@ -29,7 +29,7 @@ OSChina Gitee 同步仓库 [**Taobao**](https://gitee.com/roceys/Taobao)
 ## 20201025
     新增自动关闭“升级更新”提示
     新增完成“组队”浏览
-    同步推送至OSChina远程仓库 [Taobao](https://gitee.com/roceys/Taobao)
+    同步推送至OSChina远程仓库
 
 ## 20201024
     新增“逛一逛”
