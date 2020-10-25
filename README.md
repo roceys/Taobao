@@ -18,6 +18,8 @@ OSChina Gitee 同步仓库 [**Taobao**](https://gitee.com/roceys/Taobao)
 
 - 撸猫完毕后需要间隔一定时间继续撸才有喵币，隔天首次约645次
 
+- **即将加入自动更新功能**
+
 <br>
 
 ---
