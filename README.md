@@ -1,7 +1,7 @@
 # Taobao
 2020天猫淘宝双11自动领喵币吸猫脚本（过无障碍防检测）无后门无推广原生Auto.js纯净版
 
-OSChina Gitee 同步仓库 **[Taobao]**(https://gitee.com/roceys/Taobao)
+OSChina Gitee 同步仓库 [**Taobao**](https://gitee.com/roceys/Taobao)
 
 **请勿使用未知的app，基本上都有引流/广告/木马等植入，严重可造成用户隐私数据泄露。**
 
