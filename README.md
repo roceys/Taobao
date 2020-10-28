@@ -37,6 +37,9 @@ OSChina Gitee 同步仓库 [**JD**](https://gitee.com/roceys/JD)
 
 # 更新说明
 
+## 20201028
+    新增“我知道了”
+
 ## 20201027
     优化“关闭升级弹窗”
 
