@@ -7,7 +7,7 @@ OSChina Gitee 同步仓库 [**Taobao**](https://gitee.com/roceys/Taobao)
 
 OSChina Gitee 同步仓库 [**JD**](https://gitee.com/roceys/JD)
 
-**请勿使用未知的app或脚本，基本上都有引流/广告/木马等植入（不限于付费或免费加QQ或微信群推送淘宝客所谓低价优惠商品等）,严重可造成用户隐私数据泄露。本项目为B站全网首发（21号凌晨1-4点开发测试完成，github提交时间4点多可commited查询首次具体时间），脚本之后陆续被羊毛党抄袭至吾爱破解（帖子目前因引流被删除）、微信公众号等平台。**
+**请勿使用未知的app或脚本，基本上都有引流/广告/木马等植入（不限于付费或免费加QQ或微信群推送淘宝客所谓低价优惠商品等）,严重可造成用户隐私数据泄露。本项目为B站全网首发（21号凌晨1-4点开发测试完成，github提交时间4点多可Commits查询首次具体时间），脚本之后陆续被羊毛党抄袭至吾爱破解（帖子目前因引流被删除）、微信公众号等平台。**
 
 ## <font color="red">食用方法</font>
 - [Auto.js APP 下载](https://github.com/github-h/Auto.js/releases/tag/V4.1.1.Alpha2)
